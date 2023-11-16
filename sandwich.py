@@ -136,22 +136,3 @@ if __name__ == "__main__":
 
 
 
-"""
-def main():
-  sandwich = Sandwich(315, "wheat", "ham")
-  sandwich.add_topping("lettuce")
-  sandwich.add_topping("tomato")
-  sandwich.info()
-
-  meal = Meal(209, "rye", "ham", "dr. pepper", "fries")
-  meal.add_topping("lettuce")
-  meal.add_topping("tomato")
-  meal.info()
-
-  kids_meal = KidsMeal(228, "white bread", "bacon", "potion of regret", "apple slices", "buzz lightyear")
-  kids_meal.add_topping("pickles")
-  kids_meal.info()
-
-if __name__ == "__main__":
-  main()
-"""
