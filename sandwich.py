@@ -98,38 +98,38 @@ def main():
   meat = input("Enter meat type: ")
   if meal_type == "sandwich":
     sandwich = Sandwich(order_num, bread, meat)
-    topping = input("Enter topping (or 'done' to finish): ")
+    topping = input("Enter topping ('done' to finish, or -topping to remove the associated topping): ")
     while topping != "done":
       if topping.startswith("-"):
         sandwich.remove_topping(topping[1:])
       else:
         sandwich.add_topping(topping)
-      topping = input("Enter topping (or 'done' to finish): ")
+      topping = input("Enter topping ('done' to finish, or -topping to remove the associated topping): ")
     sandwich.info()
   elif meal_type == "meal":
     drink = input("Enter drink: ")
     side = input("Enter side: ")
     meal = Meal(order_num, bread, meat, drink, side)
-    topping = input("Enter topping (or 'done' to finish): ")
+    topping = input("Enter topping ('done' to finish, or -topping to remove the associated topping): ")
     while topping != "done":
       if topping.startswith("-"):
         meal.remove_topping(topping[1:])
       else:
         meal.add_topping(topping)
-      topping = input("Enter topping (or 'done' to finish): ")
+      topping = input("Enter topping ('done' to finish, or -topping to remove the associated topping): ")
     meal.info()
   elif meal_type == "kids meal":
     drink = input("Enter drink: ")
     side = input("Enter side: ")
     toy = input("Enter toy: ")
     kids_meal = KidsMeal(order_num, bread, meat, drink, side, toy)
-    topping = input("Enter topping (or 'done' to finish): ")
+    topping = input("Enter topping ('done' to finish, or -topping to remove the associated topping): ")
     while topping != "done":
       if topping.startswith("-"):
         kids_meal.remove_topping(topping[1:])
       else:
         kids_meal.add_topping(topping)
-      topping = input("Enter topping (or 'done' to finish): ")
+      topping = input("Enter topping ('done' to finish, or -topping to remove the associated topping): ")
     kids_meal.info()
   else:
     print("Invalid meal type. please try again.")
