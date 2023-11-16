@@ -100,7 +100,10 @@ def main():
     sandwich = Sandwich(order_num, bread, meat)
     topping = input("Enter topping (or 'done' to finish): ")
     while topping != "done":
-      sandwich.add_topping(topping)
+      if topping.startswith("-"):
+        sandwich.remove_topping(topping[1:])
+      else:
+        sandwich.add_topping(topping)
       topping = input("Enter topping (or 'done' to finish): ")
     sandwich.info()
   elif meal_type == "meal":
@@ -109,7 +112,10 @@ def main():
     meal = Meal(order_num, bread, meat, drink, side)
     topping = input("Enter topping (or 'done' to finish): ")
     while topping != "done":
-      meal.add_topping(topping)
+      if topping.startswith("-"):
+        meal.remove_topping(topping[1:])
+      else:
+        meal.add_topping(topping)
       topping = input("Enter topping (or 'done' to finish): ")
     meal.info()
   elif meal_type == "kids meal":
@@ -119,7 +125,10 @@ def main():
     kids_meal = KidsMeal(order_num, bread, meat, drink, side, toy)
     topping = input("Enter topping (or 'done' to finish): ")
     while topping != "done":
-      kids_meal.add_topping(topping)
+      if topping.startswith("-"):
+        kids_meal.remove_topping(topping[1:])
+      else:
+        kids_meal.add_topping(topping)
       topping = input("Enter topping (or 'done' to finish): ")
     kids_meal.info()
   else:
