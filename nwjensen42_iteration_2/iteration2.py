@@ -1,7 +1,7 @@
 import json
 import time
 
-"""
+
 with open('contacts.json') as f:
     data = json.load(f)
 
@@ -12,14 +12,14 @@ for x in data:
 
 time.sleep(1) # wait 1 seconds
 
-with open('events.json') as f:
-    data = json.load(f)
+with open('events.json') as g:
+    data = json.load(g)
 
 for x in data:
     for key, value in x.items():
         print(key, ':', value)
     print()
-"""
+
 
 class Contact:
     def __init__(self, first_name, last_name, user_id, email, department, job_title, phone_number, building, po_box):
@@ -73,8 +73,8 @@ for contact in contacts:
 
 time.sleep(1) # wait 1 second
 
-with open('events.json') as f:
-    event_data = json.load(f)
+with open('events.json') as g:
+    event_data = json.load(g)
 
 events = []
 for event in event_data:
