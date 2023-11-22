@@ -23,19 +23,38 @@ class Event:
 
 def view_contacts():
     for contact in contacts:
-        print(contact.first_name, contact.last_name, contact.user_id, contact.email, contact.department, contact.job_title, contact.phone_number, contact.building, contact.po_box)
+        print("Contact Information:")
+        print(f"First Name: {contact.first_name}")
+        print(f"Last Name: {contact.last_name}")
+        print(f"User ID: {contact.user_id}")
+        print(f"Email: {contact.email}")
+        print(f"Department: {contact.department}")
+        print(f"Job Title: {contact.job_title}")
+        print(f"Phone Number: {contact.phone_number}")
+        print(f"Building: {contact.building}")
+        print(f"PO Box: {contact.po_box}")
+        print()
 
 def view_events():
     for event in events:
-        print(event.event_name, event.event_id, event.event_date, event.start_time, event.location, event.duration)
+        print("Event Information:")
+        print(f"Event Name: {event.event_name}")
+        print(f"Event ID: {event.event_id}")
+        print(f"Event Date: {event.event_date}")
+        print(f"Start Time: {event.start_time}")
+        print(f"Location: {event.location}")
+        print(f"Duration: {event.duration}")
+        print()
 
 def input_last_communication_date():
     user_id = input("Enter the user ID of the contact: ")
     for contact in contacts:
-        if contact.user_id == user_id:
+        if str(contact.user_id) == str(user_id):
+            print(f"\n Contact: {contact.first_name} {contact.last_name}")
             last_communication_date = input("Enter the last date of communication: ")
             # Update the contact object with the last communication date
             contact.last_communication_date = last_communication_date
+            #print(contact.first_name, contact.last_name, contact.user_id, contact.email, contact.department, contact.job_title, contact.phone_number, contact.building, contact.po_box, contact.last_communication_date)
             break
     else:
         print("Contact not found.")
@@ -43,10 +62,12 @@ def input_last_communication_date():
 def associate_action_items():
     event_id = input("Enter the event ID: ")
     for event in events:
-        if event.event_id == event_id:
+        if str(event.event_id) == str(event_id):
+            print(f"\n Event: {event.event_name}")
             action_items = input("Enter the action items (separated by commas): ").split(",")
             # Update the event object with the action items
             event.action_items = action_items
+            #print(event.event_name, event.event_id, event.event_date, event.start_time, event.location, event.duration, event.action_items)
             break
     else:
         print("Event not found.")
