@@ -15,7 +15,7 @@ time.sleep(1) # wait 1 seconds
 with open('events.json') as g:
     data = json.load(g)
 
-for x in data:
+for x in data["university_events"]:
     for key, value in x.items():
         print(key, ':', value)
     print()
