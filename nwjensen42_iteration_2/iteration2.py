@@ -54,7 +54,6 @@ def input_last_communication_date():
             last_communication_date = input("Enter the last date of communication: ")
             # Update the contact object with the last communication date
             contact.last_communication_date = last_communication_date
-            #print(contact.first_name, contact.last_name, contact.user_id, contact.email, contact.department, contact.job_title, contact.phone_number, contact.building, contact.po_box, contact.last_communication_date)
             break
     else:
         print("Contact not found.")
@@ -67,7 +66,6 @@ def associate_action_items():
             action_items = input("Enter the action items (separated by commas): ").split(",")
             # Update the event object with the action items
             event.action_items = action_items
-            #print(event.event_name, event.event_id, event.event_date, event.start_time, event.location, event.duration, event.action_items)
             break
     else:
         print("Event not found.")
