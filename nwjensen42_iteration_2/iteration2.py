@@ -1,25 +1,4 @@
 import json
-import time
-
-
-with open('contacts.json') as f:
-    data = json.load(f)
-
-for x in data:
-    for key, value in x.items():
-        print(key, ':', value)
-    print()
-
-time.sleep(1) # wait 1 seconds
-
-with open('events.json') as g:
-    data = json.load(g)
-
-for x in data["university_events"]:
-    for key, value in x.items():
-        print(key, ':', value)
-    print()
-
 
 class Contact:
     def __init__(self, first_name, last_name, user_id, email, department, job_title, phone_number, building, po_box):
@@ -47,52 +26,18 @@ with open('contacts.json') as f:
 
 contacts = []
 for contact in contact_data:
-    first_name = contact['first_name']
-    last_name = contact['last_name']
-    user_id = contact['user_id']
-    email = contact['email']
-    department = contact['department']
-    job_title = contact['job_title']
-    phone_number = contact['phone_number']
-    building = contact['building']
-    po_box = contact['po_box']
-    contacts.append(Contact(first_name, last_name, user_id, email, department, job_title, phone_number, building, po_box))
+    contacts.append(Contact(contact['FirstName'], contact['LastName'], contact['UID'], contact['EmailAddress'], contact['Dept'], contact['Title'], contact['Phone'], contact['Building'], contact['POBox']))
 
 for contact in contacts:
-    print("Contact:")
-    print("First Name:", contact.first_name)
-    print("Last Name:", contact.last_name)
-    print("User ID:", contact.user_id)
-    print("Email:", contact.email)
-    print("Department:", contact.department)
-    print("Job Title:", contact.job_title)
-    print("Phone Number:", contact.phone_number)
-    print("Building:", contact.building)
-    print("Post Office Box:", contact.po_box)
-    print()
-
-time.sleep(1) # wait 1 second
+    print(contact.first_name, contact.last_name, contact.user_id, contact.email, contact.department, contact.job_title, contact.phone_number, contact.building, contact.po_box)
 
 with open('events.json') as g:
     event_data = json.load(g)
 
 events = []
-for event in event_data:
-    event_name = event['event_name']
-    event_id = event['event_id']
-    event_date = event['event_date']
-    start_time = event['start_time']
-    location = event['location']
-    duration = event['duration']
-    events.append(Event(event_name, event_id, event_date, start_time, location, duration))
-
+for event in event_data["university_events"]:
+    events.append(Event(event['Name'], event['UID'], event['Date'], event['StartTime'], event['Location'], event['Duration']))
 
 for event in events:
-    print("Event:")
-    print("Event Name:", event.event_name)
-    print("Event ID:", event.event_id)
-    print("Event Date:", event.event_date)
-    print("Start Time:", event.start_time)
-    print("Location:", event.location)
-    print("Duration:", event.duration)
-    print()
+    print(event.event_name, event.event_id, event.event_date, event.start_time, event.location, event.duration)
+
