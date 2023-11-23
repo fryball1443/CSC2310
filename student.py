@@ -32,10 +32,6 @@ def main():
     while True:
         try:
             index = int(input("Enter the index of the student: "))
-            """if '.' in index:
-                print("Only whole numbers, no decimals")
-                continue
-            index = int(index)"""
         except ValueError:
             print("Please enter a valid integer")
             continue
@@ -49,11 +45,14 @@ def main():
         age = school.get_student_age(index)
         print(name, age, '\n')
         total_days = int(input('How many days has school been in session this year? '))
-        days_present = input('How many days has the student attended school this year? ')
+        days_present = int(input('How many days has the student attended school this year? '))
         try:
             print(name, "'s attendance rate is", school.students[index].get_attendance_rate(int(days_present), int(total_days)))
         except ValueError:
             print("Please enter valid integers for days present and total days")
+            continue
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
             continue
 if __name__ == "__main__":
     main()
