@@ -1,1 +1,3 @@
-CSC2310 OBJECT ORIENTED PROGRAMMING CODE
+# OOP Term Project
+
+```python -m venv venv```
